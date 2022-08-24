@@ -1,0 +1,36 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# GET     /hello      controllers.HomeController.hello
+# GET       /hello      controllers.HomeController.hello(name: String)
+# GET       /testjson   controllers.HomeController.testJson
+# POST /post controllers.HomeController.testingPost
+
+# Product Controller
+GET     /products         controllers.ProductController.showAll
+GET     /products/:id     controllers.ProductController.showByID(id: Int)
+PUT     /products/:id     controllers.ProductController.update(id: Int)
+DELETE  /products/:id     controllers.ProductController.delete(id: Int)
+POST    /products         controllers.ProductController.add
+
+# Task Controller
+GET     /tasks            controllers.TaskController.showAll
+GET     /tasks/:id        controllers.TaskController.showByID(id: Int)
+PUT     /tasks/:id        controllers.TaskController.update(id: Int)
+DELETE  /tasks/:id        controllers.TaskController.delete(id: Int)
+POST    /tasks            controllers.TaskController.add
+
+# Movie Controller
+GET     /movies           controllers.MovieController.showAll
+GET     /movies/:id       controllers.MovieController.showByID(id: Int)
+PUT     /movies/:id       controllers.MovieController.update(id: Int)
+DELETE  /movies/:id       controllers.MovieController.delete(id: Int)
+POST    /movies           controllers.MovieController.add
